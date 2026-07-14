@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <style>
+         *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:white;
+    color:black;
+}
+        img{
+            width:150%;
+            height: 90vh;
+            margin-bottom: 80px;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: 30px;
+        }
+        .circle{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: yellow;
+            gap: 20px;
+        }
+        h1{
+            font-size: 38px;
+            color: white;
+            letter-spacing: 5px;
+            
+        }
+        .navbar{
+            position: absolute;
+            top: 0;
+            left: 0;  
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+             box-sizing: border-box;
+             color:white;  
+        }
+        .navbar ul{
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            text-decoration: none;
+            margin-left: 25%;
+            font-size: 25px;
+        }
+        .navbar ul li a{
+            color: white;
+            text-decoration:none;
+        }
+        .btn{
+            border:1px solid  white;
+            padding: 14px 50px;
+            border-radius: 5px;
+            background: none; 
+            color:white;
+            font-size:16px;
+            margin-right: 20px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }  
+        .btn:hover{
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+        .above{
+            top: 25%;
+             /* left: 30%; */
+            text-align: center;
+            position: absolute;
+         }
+          .above h1{
+            color: white;
+            font-size: 90px;
+            margin-bottom: 40px;
+          }
+          .above p{
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            margin-left: 25%;
+            margin-right: 26%;
+          }
+          .testimonial{
+            background: antiquewhite;
+            padding: 80px 100px;
+          }
+          .contain{
+            max-width: 1200px;
+            margin: auto;
+          }
+          .toss{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 60px;
+          }
+          .trial h2{
+            font-size: 55px;
+            margin-bottom: 28px;
+          }
+          .trial p{
+            color: gray;
+            margin-bottom: 20px;
+          }
+          .rating{
+            margin-top: 25px;
+            font-size: 30px;
+            font-weight: bold;
+          }
+          .rating i{
+            color: lightsalmon;
+            font-size: 24px;
+          }
+          .rates{
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+          }
+          .quote{
+            color: lightsalmon;
+            font-size: 40px;
+          }
+          .rates p{
+            color: gray;
+            line-height: 30px;
+            margin: 15px 0;
+          }
+          .taxi{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          }
+          .taxi img{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+          }
+          .grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 35px;
+          }
+          .card{
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            transition: .4s;
+          }
+          .card:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.6);
+          }
+          .card .quote{
+            font-size: 30px;
+          }
+          .card p{
+            margin: 15px 0;
+            color: gray;
+            line-height: 28px;
+          }
+          .user{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
+          .user img{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+          }
+          .user h4{
+              font-size: 14px;
+              letter-spacing: 2px;
+          }
+          .reservation{
+            height:450px;
+            background:url("https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600") center/cover fixed;
+            position:relative;
+            }
+
+            .reservation::before{
+            content:""; 
+            position:absolute;
+            inset:0; 
+            background:rgba(0,0,0,.6);
+              }
+
+        .reserve-box{
+          position:absolute;
+          inset:0;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction:column;
+          color:white;
+        z-index:2;
+         text-align:center;
+         }
+
+         .reserve-box img{
+           width:120px;
+            margin-bottom:20px;
+          }
+
+          .reserve-box h2{
+             font-size:55px;
+             margin-bottom:20px;
+             }
+
+          .reserve-box p{
+            width:600px;
+            max-width:90%;
+            line-height:28px;
+            }
+
+   .btn{
+    margin:30px 0;
+    border:1px solid #fff;
+    color:white;
+    text-decoration:none;
+    padding:14px 35px;
+   }
+     
+      .phone{
+           font-size:45px;
+           font-weight:bold;
+           }
+            footer{
+                 background: rgba(1, 1, 1,1); 
+                color: white;
+                height: 78vh;
+                padding: 65px;
+             }
+            .footer{
+               display: flex;
+               justify-content: space-between;
+               align-items: flex-start;
+               gap: 60px;
+            }
+            .logo1{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            
+            }
+            .logo1-circle{
+                width: 30px;
+                height: 30px;
+                background: gold;
+                border-radius: 50%;
+            }
+            .logo1 h2{
+                letter-spacing: 5px;
+                font-size: 10px;
+                
+            }
+            
+            .foohead{
+                flex: 1;
+            }
+            .foohead p{
+                line-height: 1.8;
+                margin: 1px 0;
+                font-size: 18px;
+            }
+            .foohead h2{
+                margin-bottom: 30px;
+                font-size: 30px;
+            }
+            
+            .foot{
+                display: flex;
+                gap: 20px;
+            }
+            .foohead i{
+                font-size: 22px;
+                cursor: pointer;
+                color: gold;
+            }
+            .foohead i:hover{
+                color: white;
+            }
+            
+            .foohead ul{
+                list-style: none;
+                padding: 0;
+                margin-top: 20px;
+                display: block;
+                flex-direction: column;
+            }
+            .foohead ul li{
+                display: block;
+                margin: 2px 0;
+                text-align: left;
+                
+            }
+            .foohead ul li a{
+                text-decoration: none;
+                color: white;
+                font-size: 18px;
+            }
+            
+            .location p,
+            .hours p{
+                margin: 15px 0;
+            }
+            .btnss{
+                margin-top: 25px;
+                padding: 15px 35px;
+                background: transparent;
+                color: white;
+                border: 2px solid white;
+                letter-spacing: 3px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 15px;
+            }
+            
+            .btnss:hover{
+                color: black;
+                background-color: white;
+            }
+            .bottom{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 70px;
+                border-top: 2px solid gray;
+                padding-top: 30px;
+            }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <section class="container">
+        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="FOOD Image">
+    <div class="navbar">
+        <div class="logo">
+        <div class="circle"></div>
+        <h1>NYUS</h1>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+           <button class="btn">RESERVATION</button>
+    </div>
+       <div class="above">
+        <h1>Testimonial</h1>
+        <p>We provide exceptional service with dedication, quality, and innovative solutions to meet your needs and exceed your expectations.
+         </p>
+       </div>
+        </section>
+        <section class="testimonial">
+            <div class="contain">
+                <div class="toss">
+                    <div class="trial">
+                        <h2>What They Say About Us</h2>
+                        <p>Enjoy delicious food, excellent service, and a comfortable atmosphere.
+                            We use fresh ingredients and carefully prepare every meal to make your dining experience truly memorable.</p>
+                    <div class="rating">
+                        4.8/5
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    </div>
+                    <div class="rates">
+                        
+                        <div class="quote">❝</div>
+                        
+                        <p>One of the best dining experiences we've had. The dishes were fresh, flavorful, and beautifully presented. Highly recommended!</p>
+                    <div class="taxi">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg">
+                        <h4>Alice capsey</h4>
+                    </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="quote">❝</div>
+                        <p>Excellent food and amazing atmosphere. Highly recommended.</p>
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/men/11.jpg"/>
+                        <h4>Nathon Lyon</h4>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="quote">❝</div>
+                            <p>Best restaurant in town. Friendly staff and delicious meals.</p>
+                            <div class="user">
+                                <img src="https://randomuser.me/api/portraits/men/22.jpg"/>
+                                <h4>Travis Head</h4>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="quote">❝</div>
+                                <p>Beautiful place for dinner with family and friends.</p>
+                                <div class="user">
+                                    <img src="https://randomuser.me/api/portraits/women/30.jpg"/>
+                                    <h4>Hayley Mathews</h4>
+                                </div>
+                            </div>
+                           <div class="card">
+                            <div class="quote">❝</div>
+                            <p></p>Fast service and excellent quality food every time.
+                            <div class="user"> 
+                                <img src="https://randomuser.me/api/portraits/women/40.jpg"/>
+                                <h4>Ellyse Perry</h4>
+                            </div>
+                           </div>
+                           <div class="card">
+                            <div class="quote">❝</div>
+                            <p>Wonderful ambience with outstanding customer support.</p>
+                            <div class="user">
+                                <img src="https://randomuser.me/api/portraits/men/41.jpg">
+                                <h4>Ryon Rickelton</h4>
+                            </div>
+                           </div>
+                           <div class="card">
+                            <div class="quote">❝</div>
+                            <p>Perfect place to celebrate birthdays and special events.</p>
+                            <div class="user">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg"/>
+                                <h4>Heather Knight</h4>
+                            </div>
+                           </div>
+                </div>
+            </div>
+        </section>
+        <section class="reservation">
+
+          <div class="reserve-box">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+          <h2>Reservation</h2>
+           <p>Neque elit, rutrum in laoreet nec eget scelerisque volutpat sit. Bibendum tincidunt a scelerisque consectetur ultrices.</p>
+           <a href="#" class="btn">BOOK A TABLE NOW</a>
+            <h3>Telephone Reservations</h3>
+            <div class="phone">+91 756940004</div>
+             </div>
+            </section>
+    <footer>
+            <div class="footer">
+                    <div class="foohead">
+                        <div class="logo1">
+                            <div class="logo1-circle"></div>
+                        <h2>NYUS</h2>
+                        </div>
+                        <p>We create comfortable spaces with elegant designs and high-quality craftsmanship. Our goal is to provide reliable services, modern solutions, and exceptional value for every customer.</p>
+                        
+                        <div class="foot">
+                        <i class="fa-brands fa-apple"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                        <div class="foohead"> 
+                            <h2>Our Location</h2>
+                            <div class="location">
+                            <p>2/44, YSR Circle, Main Road, Peddavadugur(vi&Mandal),<br>
+                                 Anantapur Dist, A.P</p>
+                                <p>+91 7569048004</p>
+                                <p><i class="fa-solid fa-location-dot"></i>Get Location</p>
+                            </div>
+                    </div>
+                    <div class="foohead">
+                            <h2>Quick Link</h2>
+                         <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Testimonial</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                         </ul>
+                    </div>
+                    <div class="foohead">
+                            <h2>Opening Hours</h2>
+                        <div class="hours">
+                            <p><i class="fa-regular fa-alarm-clock" class="faat"></i> Monday - Friday</p>
+                            <p>9AM - 10.30PM</p>
+
+                               <p><i class="fa-regular fa-alarm-clock"></i> Saturdat,Sunday</p>
+                                <p>9AM - 12:30AM</p>
+                        </div>
+                        <button class="btnss">Reservation</button>
+                    </div>
+            </div>
+    
+            <div class="bottom">
+                <p>Copyright © 2026 NYUS Restaurant</p>
+                <p>Powered by NYUS Restaurant</p>
+            </div>
+        </footer>
+
+</body>
+</html>
